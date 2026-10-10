@@ -6,11 +6,11 @@ A 16-bit MIPS-based processor with a 5-stage pipeline, written in VHDL and teste
 
 The pipeline uses the usual five stages:
 
-1. **Fetch.** The PC reads an instruction from a 256-word ROM and computes PC + 1.
-2. **Decode.** This stage reads the register file, generates the control signals from the opcode, and extends the immediate.
-3. **Execute.** The ALU does the operation. The branch target address is also calculated here.
-4. **Memory.** Loads and stores happen here, and this is where a `beq` decides whether to branch.
-5. **Write back.** The result goes back into the register file.
+1. **Fetch:** The PC reads an instruction from a 256-word ROM and computes PC + 1.
+2. **Decode:** This stage reads the register file, generates the control signals from the opcode, and extends the immediate.
+3. **Execute:** The ALU does the operation. The branch target address is also calculated here.
+4. **Memory:** Loads and stores happen here, and this is where a `beq` decides whether to branch.
+5. **Write back:** The result goes back into the register file.
 
 Between each pair of stages there's a pipeline register. It carries the data forward, along with the control signals that later stages still need.
 
